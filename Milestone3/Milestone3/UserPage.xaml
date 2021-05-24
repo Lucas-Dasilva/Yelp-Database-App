@@ -1,0 +1,59 @@
+﻿<Page x:Class="Milestone3.UserPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Milestone3"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="656" d:DesignWidth="1300"
+      Title="UserPage">
+
+
+    <Grid Background="#2C2F33">
+
+        <Border CornerRadius="5" BorderBrush="RoyalBlue" BorderThickness="2" HorizontalAlignment="Left" Height="265" Margin="4,15,0,0" VerticalAlignment="Top" Width="216"/>
+        <TextBlock Foreground="White" Height="17" FontWeight="SemiBold" HorizontalAlignment="Left" Margin="10,23,0,0" Name="textBlock1" Text="Set Current User" VerticalAlignment="Top" Width="112" />
+        <TextBox Foreground="#7995A4" Height="25" HorizontalAlignment="Left" Margin="10,40,0,0" Name="txtNameToSearch" TextChanged="txtNameToSearch_TextChanged" VerticalAlignment="Top" Width="202" RenderTransformOrigin="0.532,0.553" />
+        <ListBox x:Name="userList" Background="GhostWhite" HorizontalAlignment="Left" Height="206" Margin="9,70,0,0" VerticalAlignment="Top" Width="206" SelectionChanged="SetCurrentUserSelectionChange"/>
+
+
+        <Border CornerRadius="5" BorderBrush="RoyalBlue" BorderThickness="2" HorizontalAlignment="Left" Height="265" Margin="225,15,0,0" VerticalAlignment="Top" Width="207">
+            <TextBlock Margin="5,3,0,0" Foreground="White"  FontWeight="SemiBold" TextWrapping="Wrap" Text="User Information" Height="261" VerticalAlignment="Top"/>
+        </Border>
+        <Label Foreground="#7995A4" Content="Name:" HorizontalAlignment="Left" Margin="225,48,0,0" VerticalAlignment="Top"/>
+        <Label Foreground="#7995A4" Content="Stars:" HorizontalAlignment="Left" Margin="225,77,0,0" VerticalAlignment="Top"/>
+        <Label Foreground="#7995A4" Content="Fans:" HorizontalAlignment="Left" Margin="341,77,0,0" VerticalAlignment="Top"/>
+        <Label Foreground="#7995A4" Content="Yelping Since:" HorizontalAlignment="Left" Margin="225,106,0,0" VerticalAlignment="Top"/>
+        <Label Foreground="#7995A4" Content="Funny" HorizontalAlignment="Left" Margin="227,130,0,0" VerticalAlignment="Top"/>
+        <Label Foreground="#7995A4" Content="Cool" HorizontalAlignment="Left" Margin="319,130,0,0" VerticalAlignment="Top"/>
+        <Label Foreground="#7995A4" Content="Useful" HorizontalAlignment="Left" Margin="389,130,0,0" VerticalAlignment="Top"/>
+        <Label Foreground="#7995A4" Content="Tip Count:" HorizontalAlignment="Left" Margin="226,164,0,0" VerticalAlignment="Top"/>
+        <Label Foreground="#7995A4" Content="Total Tip Likes:" HorizontalAlignment="Left" Margin="226,188,0,0" VerticalAlignment="Top"/>
+        <Label Foreground="#7995A4" Content="Location" HorizontalAlignment="Left" Margin="225,215,0,0" VerticalAlignment="Top"/>
+        <Label Foreground="#7995A4" Content="Lat:" HorizontalAlignment="Left" Margin="262,232,0,0" VerticalAlignment="Top"/>
+        <Label Foreground="#7995A4" Content="Lon:" HorizontalAlignment="Left" Margin="258,252,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="editButton" Content="Edit" FontSize="9" HorizontalAlignment="Left" Margin="373,238,0,0" VerticalContentAlignment="Center"  VerticalAlignment="Top" Width="52" Height="15" Padding="0" FontWeight="Normal" Click="EditCoordinatesButtonClick"/>
+        <Button x:Name="updateButton" Content="Update" FontSize="9" HorizontalAlignment="Left" Margin="373,258,0,0" VerticalContentAlignment="Center" VerticalAlignment="Top" Width="52" Height="15" Padding="0" FontWeight="Normal" Click="UpdateButtonClick"/>
+        <TextBlock x:Name="nameBlock" TextAlignment="Center" Background="Gray" HorizontalAlignment="Left" Margin="272,55,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="148" Height="17"/>
+        <TextBlock x:Name="starsBlock" TextAlignment="Center" Background="Gray" HorizontalAlignment="Left" Margin="272,84,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="39" Height="17"/>
+        <TextBlock x:Name="fansBlock" TextAlignment="Center" Background="Gray" HorizontalAlignment="Left" Margin="380,84,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="40" Height="17"/>
+        <TextBlock x:Name="dateBlock" Background="Gray" HorizontalAlignment="Left" Margin="305,111,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="115" Height="19"/>
+        <TextBlock x:Name="coolBlock" TextAlignment="Center" Background="Gray" HorizontalAlignment="Left" Margin="319,148,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="34" Height="16"/>
+        <TextBlock x:Name="usefulBlock" TextAlignment="Center" Background="Gray" HorizontalAlignment="Left" Margin="393,148,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="34" Height="16"/>
+        <TextBlock x:Name="funnyBlock" TextAlignment="Center" Background="Gray" HorizontalAlignment="Left" Margin="230,148,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="34" Height="16"/>
+        <TextBlock x:Name="tipcountBlock" TextAlignment="Center" Background="Gray" HorizontalAlignment="Left" Margin="316,172,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="52" Height="16"/>
+        <TextBlock x:Name="totalTipsBlock" TextAlignment="Center" Background="Gray" HorizontalAlignment="Left" Margin="316,196,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="52" Height="16"/>
+
+        <Border CornerRadius="5" BorderBrush="RoyalBlue" BorderThickness="2" HorizontalAlignment="Left" Height="346" Margin="4,300,0,0" VerticalAlignment="Top" Width="428">
+            <TextBlock Margin="5,3,0,0" Foreground="White" FontWeight="SemiBold" TextWrapping="Wrap" Text="Friends"/>
+        </Border>
+        <DataGrid x:Name="friendsGrid" Background="GhostWhite" HorizontalAlignment="Left" Height="319" Margin="6,325,0,0" VerticalAlignment="Top" Width="424" IsReadOnly="True"/>
+        <Border CornerRadius="5" BorderBrush="RoyalBlue" BorderThickness="2" HorizontalAlignment="Left" Height="621" Margin="452,25,0,0" VerticalAlignment="Top" Width="838">
+            <TextBlock Margin="5,3,0,0" Foreground="White" TextWrapping="Wrap" FontWeight="SemiBold" Text="Latest tips of my friends?"/>
+        </Border>
+        <DataGrid x:Name="tipsGrid" Background="GhostWhite" HorizontalAlignment="Left" Height="594" Margin="454,50,0,0" VerticalAlignment="Top" Width="834" IsReadOnly="True"/>
+        <TextBox x:Name="longBlock" KeyDown="OnLongKeyDownHandler" HorizontalContentAlignment="Left" Padding="0" Background="Gray" HorizontalAlignment="Left" Height="15" Margin="286,258,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="80" Cursor="Arrow"/>
+        <TextBox x:Name="latBlock" KeyDown="OnLatKeyDownHandler" HorizontalContentAlignment="Left" Padding="0" Background="Gray" HorizontalAlignment="Left" Height="15" Margin="286,238,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="80" Cursor="Arrow"/>
+    </Grid>
+</Page>

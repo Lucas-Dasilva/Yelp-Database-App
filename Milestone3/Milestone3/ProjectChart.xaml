@@ -1,0 +1,22 @@
+﻿<Window x:Class="Milestone3.ProjectChart"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Milestone3"
+        xmlns:chartingToolkit="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="1100">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="174*"/>
+            <RowDefinition Height="245*"/>
+        </Grid.RowDefinitions>
+
+        <chartingToolkit:Chart HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Height="408" Grid.RowSpan="2" Width="972" Name="monthChart">
+            <chartingToolkit:ColumnSeries HorizontalAlignment="Left" Height="336" VerticalAlignment="Top" Width="787" Title="Monthly Checkins" DependentValuePath="Value" IndependentValuePath="Key" ItemsSource="{Binding}"/>
+        </chartingToolkit:Chart>
+        <Button Content="Check-In" HorizontalAlignment="Left" VerticalAlignment="Top" Width="95" RenderTransformOrigin="7.772,4.762" Margin="987,10,0,0"  Click="checkinButton_Click"/>
+
+    </Grid>
+</Window>
